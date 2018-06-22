@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+import gi
+gi.require_version('Playerctl', '1.0')
+from gi.repository import Playerctl
+
+p = Playerctl.Player()
+title = p.get_title()
+artist = p.get_artist()
+if artist:
+    print("{} - {}".format(artist, title))
+else:
+    print(title)

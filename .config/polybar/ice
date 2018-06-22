@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+tripInfo=$(curl -s https://portal.imice.de/api1/rs/tripInfo)
+status=$(curl -s https://portal.imice.de/api1/rs/status)
+next=$(echo $tripInfo|jq '.stopInfo.actualNext as $next|.stops[]|select(.station.evaNr == $next)')
+if [ -z "$next" ]; then
+	echo "Endstation"
+	exit 0
+fi
+nextArrivalTs=$(echo $next|jq '.timetable.actualArrivalTime/1000')
+nextArrival=$(date -d "@$nextArrivalTs" +%H:%M)
+delay=$(echo $next|jq '.timetable.arrivalDelay' -r)
+nextStation=$(echo $next|jq '.station.name' -r)
+speed=$(echo $status|jq '.speed')
+
+if [ -n "$delay" ]; then
+	delay=" ($delay)"
+fi
+
+echo "$speed km/h > $nextStation $nextArrival$delay"

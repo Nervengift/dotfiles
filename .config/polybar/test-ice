@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+wifi=$(nmcli -t -f "IN-USE,SSID" dev wifi|sort|uniq|awk -F":" '/^\*/ {print($2)}')
+[ "$wifi" == "WIFIonICE" ]
