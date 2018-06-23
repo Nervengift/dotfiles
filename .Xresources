@@ -1,0 +1,7 @@
+rofi.kb-row-tab: 
+rofi.kb-row-down: Down,Control+n
+rofi.kb-row-select: Tab
+rofi.show-icons: true
+
+Xcursor.size: 22
+Xcursor.theme: Adwaita
