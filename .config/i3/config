@@ -226,12 +226,12 @@ bindsym Mod4+Mod1+l exec thinkpad-rotate left
 bindsym Mod4+Mod1+j exec thinkpad-rotate normal
 bindsym Mod4+Mod1+k exec thinkpad-rotate inverted
 
-bindsym $mod+Shift+N exec i3-input -F "rename workspace to $(/home/clemens/bin/i3_ws_num):$(/home/clemens/bin/i3_ws_num).%s" -P "Rename workspace: $(/home/clemens/bin/i3_ws_num)."
+bindsym $mod+Shift+N exec i3-input -F "rename workspace to $(/home/clemens/.config/i3/i3_ws_num):$(/home/clemens/.config/i3/i3_ws_num).%s" -P "Rename workspace: $(/home/clemens/.config/i3/i3_ws_num)."
 #bindsym $mod+Shift+N exec i3-input -F "rename workspace to %s" -P "Rename workspace: "
 bindsym $mod+Tab exec rofi -show window
 #cycle through windows on hsplit/tabbed
 #bindsym $mod+Tab focus right
-bindsym Mod1+Tab exec /home/clemens/bin/i3_next_window
+bindsym Mod1+Tab exec /home/clemens/.config/i3/i3_next_window
 bindsym $mod+F7 exec /home/clemens/bin/screenlayout_menu
 bindsym $mod+F8 exec networkmanager_dmenu
 bindsym $mod+F9 exec /home/clemens/bin/rofi-pulse-sink
@@ -267,7 +267,7 @@ exec seafile-applet&
 #exec dunst&
 exec rofication-daemon.py
 bind Ctrl+49 exec sh -c "rofication-gui.py&& pkill -RTMIN+2 i3blocks"
-exec /home/clemens/bin/i3-notify.py&
+exec /home/clemens/.config/i3/i3-notify.py&
 #exec compton --config .compton.conf -b
 exec gnome-pie&
 #exec mousetweaks --ssc --ssc-time=0.8 --daemonize

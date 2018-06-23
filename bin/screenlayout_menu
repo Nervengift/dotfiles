@@ -1,0 +1,1 @@
+ls .screenlayout | grep -v "^_"  | sed "s/\.sh$//" | rofi -dmenu -p "Screen layout:" -location 6 | sed "s|^.*$|/home/clemens/.screenlayout/&.sh|" | xargs sh

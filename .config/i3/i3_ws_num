@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+
+import i3
+import sys
+
+workspaces = i3.get_workspaces()
+sys.stdout.write(str([w["num"] for w in workspaces if w["focused"]][0]))
