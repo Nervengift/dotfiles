@@ -50,7 +50,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 ;font-0 = fixed:pixelsize=8;1
-font-0 = Hermit:fontformat=truetype:size=7
+font-0 = Hermit:size=7
 ;font-2 = siji:pixelsize=8;1
 font-1 = "FontAwesome:size=9;1"
 font-2 = emojione:pixelsize=8;0
