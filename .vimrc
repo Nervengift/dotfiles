@@ -12,9 +12,8 @@
 "
 " plugin installation:
 "
-" 	VimPlug is used for plugin management. It is included as a git
-" 	submodule with this dotfiles repository and is available at
-" 	https://github.com/junegunn/vim-plug
+" 	VimPlug is used for plugin management. It is included in this dotfiles
+" 	repository and is available at https://github.com/junegunn/vim-plug
 "
 " 	To download and install all plugins, just run :PlugInstall im vim
 "
