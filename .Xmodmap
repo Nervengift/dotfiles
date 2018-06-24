@@ -1,0 +1,8 @@
+!remove Lock = Caps_Lock
+clear Lock
+! 66 = Caps_Lock
+keycode 66 = Multi_key
+clear Control
+add Control = Control_L
+! 105 = Control_R
+keycode 105 = dead_greek
