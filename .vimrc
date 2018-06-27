@@ -8,6 +8,7 @@
 "   racer: rust completer (cargo install racer)
 "   pyls: python language server (pip install python-language-server)
 "   task: taskwarrior, for taskwiki
+"   python-tasklib: for taskwiki
 "   a powerline-compatible font: for airline (statusbar)
 "
 " plugin installation:
