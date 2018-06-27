@@ -39,6 +39,9 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 " securemodelines: handle vim modelines more securely
 Plug 'https://github.com/ciaranm/securemodelines.git'
 
+" ctrlp: fuzzy file and buffer search with MRU
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+
 " Git
 Plug 'https://github.com/tpope/vim-fugitive.git'
 
@@ -420,6 +423,10 @@ autocmd FileType python nmap K :LspHover<CR>
 " asyncomplete
 autocmd User asyncomplete_setup call asyncomplete#register_source(
 	\ asyncomplete#sources#racer#get_source_options())
+
+" ctrlp
+" search in files, MRU and buffers at once by default
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 
 "   ____          _                                                                  _
