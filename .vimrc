@@ -3,19 +3,19 @@
 "
 " external dependencies:
 "
-" 	ack: grep alternative
-" 	rls: rust language server (rustup component add rls-preview rust-analysis rust-src)
-" 	racer: rust completer (cargo install racer)
-" 	pyls: python language server (pip install python-language-server)
-" 	task: taskwarrior, for taskwiki
-" 	a powerline-compatible font: for airline (statusbar)
+"   ack: grep alternative
+"   rls: rust language server (rustup component add rls-preview rust-analysis rust-src)
+"   racer: rust completer (cargo install racer)
+"   pyls: python language server (pip install python-language-server)
+"   task: taskwarrior, for taskwiki
+"   a powerline-compatible font: for airline (statusbar)
 "
 " plugin installation:
 "
-" 	VimPlug is used for plugin management. It is included in this dotfiles
-" 	repository and is available at https://github.com/junegunn/vim-plug
+"   VimPlug is used for plugin management. It is included in this dotfiles
+"   repository and is available at https://github.com/junegunn/vim-plug
 "
-" 	To download and install all plugins, just run :PlugInstall im vim
+"   To download and install all plugins, just run :PlugInstall im vim
 "
 
 set nocompatible " don't be Vi.
@@ -49,39 +49,42 @@ Plug 'https://github.com/prabirshrestha/async.vim'
 
 " ack: grep-like search
 " usage:
-" 	:Ack <pattern> [<file>]
+"   :Ack <pattern> [<file>]
 Plug 'https://github.com/mileszs/ack.vim.git'
 
 " nerdcommenter: comment out code
 " default bindings:
-" 	<leader>cc comment out current line/selected text
-" 	<leader>cs sexy comment: comment out lines with pretty block format
-" 	<leader>cu uncomment selection
+"   <leader>cc comment out current line/selected text
+"   <leader>cs sexy comment: comment out lines with pretty block format
+"   <leader>cu uncomment selection
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 
 " vim-unimpaired: set of handy pairwise mappings
 " e.g.
-" 	[q :cnext
-" 	]q :cprevious
-"	[b :bprevious
-"	]b :bnext
-" 	[u ]u encode/decode url
-" 	[x ]x encode/decode xml/html
+"   [q :cnext
+"   ]q :cprevious
+"   [b :bprevious
+"   ]b :bnext
+"   [u ]u encode/decode url
+"   [x ]x encode/decode xml/html
 " there's lots of handy stuff in there that I should use more often, see
 " https://github.com/tpope/vim-unimpaired/blob/master/README.markdownk
 Plug 'https://github.com/tpope/vim-unimpaired.git'
 
 " vim-surround: easy adding/changing quotes and parentheses
 " e.g.:
-" 	cs"'  change surrounding " to '
-" 	ysiw) wrap current word (iw) in ()
-" 	ysiw( wrap current word (iw) with one space: ( foo )
-" 	ds)   remove ()
-" 	S<p> (in visual mode) surround selection with <p></p>
+"   cs"'  change surrounding " to '
+"   ysiw) wrap current word (iw) in ()
+"   ysiw( wrap current word (iw) with one space: ( foo )
+"   ds)   remove ()
+"   S<p> (in visual mode) surround selection with <p></p>
 Plug 'https://github.com/tpope/vim-surround.git'
 
 " vim-repeat: fix . for plugin mappings (at least in tpope plugins)
 Plug 'https://github.com/tpope/vim-repeat.git' 
+
+" use normal tab settings at beginning of line, expand tabs everywhere els
+Plug 'https://github.com/dpc/vim-smarttabs.git'
 
 " tagbar: sidebar for ctags (file structure)
 " bound to <leader>tb
@@ -191,10 +194,10 @@ set t_Co=256
 set background=dark
 colorscheme jellybeans
 if &term =~ '256color'
-    " disable Background Color Erase (BCE) so that color schemes
-    " render properly when inside 256-color tmux and GNU screen.
-    " see also http://sunaku.github.io/vim-256color-bce.html
-    set t_ut=
+	" disable Background Color Erase (BCE) so that color schemes
+	" render properly when inside 256-color tmux and GNU screen.
+	" see also http://sunaku.github.io/vim-256color-bce.html
+	set t_ut=
 endif
 
 set laststatus=2 " always display a status line for the last window
@@ -375,35 +378,35 @@ let g:vimwiki_list = [{'path' : '~/Seafile/sync/vimwiki/'}]
 
 " tagbar
 let g:tagbar_type_rust = {
-    \ 'ctagstype' : 'rust',
-    \ 'kinds' : [
-        \'T:types,type definitions',
-        \'f:functions,function definitions',
-        \'g:enum,enumeration names',
-        \'s:structure names',
-        \'m:modules,module names',
-        \'c:consts,static constants',
-        \'t:traits,traits',
-        \'i:impls,trait implementations',
-    \]
-    \}
+	\ 'ctagstype' : 'rust',
+	\ 'kinds' : [
+		\'T:types,type definitions',
+		\'f:functions,function definitions',
+		\'g:enum,enumeration names',
+		\'s:structure names',
+		\'m:modules,module names',
+		\'c:consts,static constants',
+		\'t:traits,traits',
+		\'i:impls,trait implementations',
+	\]
+	\}
 " toggle tagbar on <leader>tb
 nnoremap <leader>tb :TagbarToggle<cr>
 
 " lsp (language server)
 if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'rls',
+		\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+		\ 'whitelist': ['rust'],
+		\ })
 endif
 if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'pyls',
+		\ 'cmd': {server_info->['pyls']},
+		\ 'whitelist': ['python'],
+		\ })
 endif
 " enable linter markers
 let g:lsp_signs_enabled = 1
@@ -415,7 +418,7 @@ autocmd FileType python nmap K :LspHover<CR>
 
 " asyncomplete
 autocmd User asyncomplete_setup call asyncomplete#register_source(
-    \ asyncomplete#sources#racer#get_source_options())
+	\ asyncomplete#sources#racer#get_source_options())
 
 
 "   ____          _                                                                  _
