@@ -207,6 +207,7 @@ endif
 set laststatus=2 " always display a status line for the last window
 set relativenumber " display relative line numbers instead of absolute
 set scrolloff=8 " if possible, don't move the cursor to within 8 lines of window edges
+set linebreak " wrap lines on word boundaries
 
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
