@@ -11,7 +11,7 @@ end
 
 set -gx EDITOR vim
 set -gx GOPATH "$HOME/.go"
-set -gx PATH $HOME/.gem/ruby/2.5.0/bin $HOME/.cargo/bin $GOPATH/bin $PATH
+set -gx PATH $HOME/bin $HOME/.gem/ruby/2.5.0/bin $HOME/.cargo/bin $GOPATH/bin $PATH
 
 if [ "$TERM" = "xterm" ]
 	export TERM=xterm-256color
