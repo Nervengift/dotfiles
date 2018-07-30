@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-tripInfo=$(curl -s https://portal.imice.de/api1/rs/tripInfo)
+tripInfo=$(curl -s https://portal.imice.de/api1/rs/tripInfo/trip|jq '.trip')
 status=$(curl -s https://portal.imice.de/api1/rs/status)
 next=$(echo $tripInfo|jq '.stopInfo.actualNext as $next|.stops[]|select(.station.evaNr == $next)')
 if [ -z "$next" ]; then
