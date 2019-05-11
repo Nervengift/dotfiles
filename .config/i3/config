@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-set $terminal kitty
+set $terminal alacritty
 
 # moving to the currently focussed workspace moves back to the last focused one
 workspace_auto_back_and_forth yes
@@ -253,10 +253,8 @@ assign [class="Pidgin" window_role="conversation"] "12:"
 for_window [class="Display" floating], resize set 500 500, move position center
 
 # scratchpad terminal
-for_window [instance="scratch"] move scratchpad
-for_window [window_role="scratch"] move scratchpad
-for_window [class="Roxterm" window_role="scratch"]resize set 650 450, move position 650 50
-exec mate-terminal --role scratch
+for_window [instance="alacritty-scratch"] move scratchpad
+exec alacritty --class alacritty-scratch
 
 # Autostart
 exec /home/clemens/bin/random-bg.sh
