@@ -28,7 +28,7 @@ client.urgent           #bd2c40 #bd2c40 #222222 #bd2c40
 
 # font for window titles. ISO 10646 = Unicode
 # font -misc-fixed-medium-r-normal--11-120-75-75-C-70-iso10646-1
-font pango: Hermit 7
+font pango: Hermit 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
