@@ -231,7 +231,7 @@ bindsym $mod+Shift+N exec i3-input -F "rename workspace to $(/home/clemens/.conf
 bindsym $mod+Tab exec rofi -show window
 #cycle through windows on hsplit/tabbed
 #bindsym $mod+Tab focus right
-bindsym Mod1+Tab exec /home/clemens/.config/i3/i3_next_window
+bindsym Mod1+Tab exec bash /home/clemens/.config/i3/i3_next_window
 bindsym $mod+F7 exec /home/clemens/bin/screenlayout_menu
 bindsym $mod+F8 exec networkmanager_dmenu
 bindsym $mod+F9 exec /home/clemens/bin/rofi-pulse-sink
