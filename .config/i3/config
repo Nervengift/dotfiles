@@ -213,18 +213,17 @@ bind 122 exec ponymix decrease 5
 bind 123 exec ponymix increase 5
 bind 121 exec ponymix toggle
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec light -A 5 
+bindsym XF86MonBrightnessDown exec light -U 5
 
 bindsym XF86Launch1 exec bash -c "echo rimshot-normal > /dev/udp/192.168.23.42/23421"
 
 bindsym --release Control+Mod1+l exec i3lock -c 000000 -d
-bind 161 exec /home/clemens/bin/rotate
 
-bindsym Mod4+Mod1+h exec thinkpad-rotate right
-bindsym Mod4+Mod1+l exec thinkpad-rotate left
-bindsym Mod4+Mod1+j exec thinkpad-rotate normal
-bindsym Mod4+Mod1+k exec thinkpad-rotate inverted
+bindsym Mod4+Mod1+h exec rotate right
+bindsym Mod4+Mod1+l exec rotate left
+bindsym Mod4+Mod1+j exec rotate normal
+bindsym Mod4+Mod1+k exec rotate inverted
 
 bindsym $mod+Shift+N exec i3-input -F "rename workspace to $(/home/clemens/.config/i3/i3_ws_num):$(/home/clemens/.config/i3/i3_ws_num).%s" -P "Rename workspace: $(/home/clemens/.config/i3/i3_ws_num)."
 #bindsym $mod+Shift+N exec i3-input -F "rename workspace to %s" -P "Rename workspace: "

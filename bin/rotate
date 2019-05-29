@@ -1,0 +1,37 @@
+#!/bin/sh
+TOUCH="Wacom Pen and multitouch sensor Finger touch"
+STYLUS="Wacom Pen and multitouch sensor Pen stylus"
+ERASER="Wacom Pen and multitouch sensor Pen eraser"
+
+case "$1" in
+    inverted)
+    # rotate to inverted
+    xrandr -o inverted
+    xsetwacom set "$STYLUS" rotate half
+    xsetwacom set "$ERASER" rotate half
+    xsetwacom set "$TOUCH" rotate half
+    ;;
+    right|portrait)
+    # rotate to the right
+    xrandr -o right
+    xsetwacom set "$STYLUS" rotate cw
+    xsetwacom set "$ERASER" rotate cw
+    xsetwacom set "$TOUCH" rotate cw
+    ;;
+    left)
+    # rotate to the left
+    xrandr -o left
+    xsetwacom set "$STYLUS" rotate ccw
+    xsetwacom set "$ERASER" rotate ccw
+    xsetwacom set "$TOUCH" rotate ccw
+    ;;
+	*)
+    # rotate to normal
+    xrandr -o normal
+    xsetwacom set "$STYLUS" rotate none
+    xsetwacom set "$ERASER" rotate none
+    xsetwacom set "$TOUCH" rotate none
+    ;;
+esac
+
+i3-msg restart
