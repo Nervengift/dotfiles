@@ -55,13 +55,13 @@ font-1 = "FontAwesome:size=10;1"
 font-2 = emojione:pixelsize=8;0
 
 #modules-left = i3 xwindow
-modules-left = i3
+modules-left = i3 xwindow windowmenu
 modules-center = 
 #modules-right = mpd mpris volume rofication cpu memory temperature wifi ip_wifi rx_wifi tx_wifi eth rx_eth tx_eth vpn battery date
 #modules-right = ice mpd mpris volume rofication cpu memory temperature wifi ip_wifi rx_wifi tx_wifi eth rx_eth tx_eth vpn battery date
 modules-right = ice mpd mpris volume cpu memory temperature wifi ip_wifi rx_wifi tx_wifi eth rx_eth tx_eth vpn battery date
 
-;tray-position = right
+tray-position = right
 tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
@@ -410,6 +410,27 @@ ramp-4 = 
 ramp-foreground = ${colors.foreground-alt}
 ramp-3-foreground = ${colors.warn}
 ramp-4-foreground = ${colors.alert}
+
+[module/windowmenu]
+type = custom/menu
+
+label-open = 
+label-close = ""
+label-separator = " "
+
+expand-right = true
+
+menu-0-0 = 
+menu-0-0-exec = i3-msg kill
+
+menu-0-1 = 
+menu-0-1-exec = i3-msg move left
+menu-0-2 = 
+menu-0-2-exec = i3-msg move right
+menu-0-3 = 
+menu-0-3-exec = i3-msg move up
+menu-0-4 = 
+menu-0-4-exec = i3-msg move down
 
 [settings]
 screenchange-reload = true
