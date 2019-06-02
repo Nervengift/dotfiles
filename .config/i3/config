@@ -277,6 +277,7 @@ exec xset dpms 0 0 0
 exec xset s 0 0
 
 exec libinput-gestures&
+exec /home/clemens/bin/thinkpad-rotate.py&
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Start i3bar to display a workspace bar (plus the system information i3status
