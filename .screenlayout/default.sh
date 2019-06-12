@@ -1,5 +1,5 @@
 #!/bin/sh
-xrandr --output DP2 --off --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 0x0 --scale 1x1 --rotate normal --primary --output VGA1 --off
+xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
 `dirname "$0"`/_fix_touch.sh
 ~/bin/random-bg.sh
 i3-msg restart # fix systray
