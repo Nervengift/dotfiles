@@ -257,7 +257,6 @@ exec alacritty --class alacritty-scratch
 
 # Autostart
 exec /home/clemens/bin/random-bg.sh
-#exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1& 
 exec fcitx&
 exec nm-applet&
 exec seafile-applet&
@@ -265,11 +264,6 @@ exec seafile-applet&
 exec rofication-daemon.py
 bind Ctrl+49 exec sh -c "rofication-gui.py&& pkill -RTMIN+2 i3blocks"
 exec /home/clemens/.config/i3/i3-notify.py&
-#exec compton --config .compton.conf -b
-exec gnome-pie&
-#exec mousetweaks --ssc --ssc-time=0.8 --daemonize
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
-exec SSH_ASKPASS=/home/clemens/bin/ssh-askpass ssh-add&
 
 exec "xss-lock -- i3lock -c 000000 -d"
 #disable screen being turned off by X
