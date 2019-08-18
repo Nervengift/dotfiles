@@ -55,10 +55,16 @@ bindsym $mod+l focus right
 bindsym $mod+h focus left
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Mod3+Left focus left
+bindsym $mod+Mod3+Down focus down
+bindsym $mod+Mod3+Up focus up
+bindsym $mod+Mod3+Right focus right
+
+# alternatives for neo (home row arrow keys use mod3)
+bindsym $mod+Mod3+Left focus left
+bindsym $mod+Mod3+Down focus down
+bindsym $mod+Mod3+Up focus up
+bindsym $mod+Mod3+Right focus right
 
 # move focused window
 bindsym $mod+Shift+J move down
@@ -71,6 +77,12 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# alternatives for neo (home row arrow keys use mod3)
+bindsym $mod+Shift+Mod3+Left move left
+bindsym $mod+Shift+Mod3+Down move down
+bindsym $mod+Shift+Mod3+Up move up
+bindsym $mod+Shift+Mod3+Right move right
 
 # split in horizontal orientation
 bindsym $mod+Control+L split h
@@ -167,18 +179,26 @@ mode "resize" {
     bindsym l resize shrink right 10 px or 10 ppt
     bindsym Shift+L resize grow   right 10 px or 10 ppt
 
-            # same bindings, but for the arrow keys
+    # same bindings, but for the arrow keys
     bindsym Left resize shrink left 10 px or 10 ppt
+    bindsym Mod3+Left resize shrink left 10 px or 10 ppt
     bindsym Shift+Left resize grow   left 10 px or 10 ppt
+    bindsym Shift+Mod3+Left resize grow   left 10 px or 10 ppt
 
     bindsym Down resize shrink down 10 px or 10 ppt
+    bindsym Mod3+Down resize shrink down 10 px or 10 ppt
     bindsym Shift+Down resize grow   down 10 px or 10 ppt
+    bindsym Shift+Mod3+Down resize grow   down 10 px or 10 ppt
 
     bindsym Up resize shrink up 10 px or 10 ppt
+    bindsym Mod3+Up resize shrink up 10 px or 10 ppt
     bindsym Shift+Up resize grow   up 10 px or 10 ppt
+    bindsym Shift+Mod3+Up resize grow   up 10 px or 10 ppt
 
     bindsym Right resize shrink right 10 px or 10 ppt
+    bindsym Mod3+Right resize shrink right 10 px or 10 ppt
     bindsym Shift+Right resize grow   right 10 px or 10 ppt
+    bindsym Shift+Mod3+Right resize grow   right 10 px or 10 ppt
 
             # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -192,6 +212,10 @@ mode "move/split" {
     bindsym Down move down
     bindsym Up move up
     bindsym Right move right
+    bindsym Mod3+Left move left
+    bindsym Mod3+Down move down
+    bindsym Mod3+Up move up
+    bindsym Mod3+Right move right
 
     bindsym h split h
     bindsym v split v
