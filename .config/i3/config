@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-set $terminal alacritty
+set $terminal termite
 
 # moving to the currently focussed workspace moves back to the last focused one
 workspace_auto_back_and_forth yes
@@ -276,8 +276,8 @@ assign [class="Pidgin" window_role="conversation"] "12:"
 for_window [class="Display" floating], resize set 500 500, move position center
 
 # scratchpad terminal
-for_window [instance="alacritty-scratch"] move scratchpad
-exec alacritty --class alacritty-scratch
+for_window [instance="termite-scratch"] move scratchpad
+exec termite --class termite-scratch
 
 # Autostart
 exec /home/clemens/bin/random-bg.sh
