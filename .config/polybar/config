@@ -79,7 +79,7 @@ tray-padding = 2
 
 [bar/secondary]
 inherit = bar/primary
-monitor = VGA-1
+monitor = HDMI-2
 monitor-fallback = DP-1
 
 [module/windows]
@@ -391,7 +391,7 @@ animation-charging-framerate = 1000
 [module/temperature]
 type = internal/temperature
 thermal-zone = 1
-warn-temperature = 90
+warn-temperature = 70
 
 format = <ramp> <label>
 format-underline = #f50a4d
