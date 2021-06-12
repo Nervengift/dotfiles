@@ -55,10 +55,10 @@ bindsym $mod+l focus right
 bindsym $mod+h focus left
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Mod3+Left focus left
-bindsym $mod+Mod3+Down focus down
-bindsym $mod+Mod3+Up focus up
-bindsym $mod+Mod3+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # alternatives for neo (home row arrow keys use mod3)
 bindsym $mod+Mod3+Left focus left
@@ -276,7 +276,7 @@ assign [class="Pidgin" window_role="conversation"] "12:"
 for_window [class="Display" floating], resize set 500 500, move position center
 
 # scratchpad terminal
-for_window [instance="termite-scratch"] move scratchpad
+for_window [class="termite-scratch"] move scratchpad
 exec termite --class termite-scratch
 
 # Autostart
