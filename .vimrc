@@ -197,6 +197,8 @@ syn on
 set t_Co=256
 set background=dark
 colorscheme jellybeans
+" transparent background
+hi Normal guibg=NONE ctermbg=NONE
 if &term =~ '256color'
 	" disable Background Color Erase (BCE) so that color schemes
 	" render properly when inside 256-color tmux and GNU screen.
@@ -270,7 +272,7 @@ set infercase
 
 " system wide copy-paste with ctrl-c ctrl-v
 vmap <c-c> "+y
-imap <c-v> "+p
+imap <c-v> <C-O>"+p
 
 " move screen lines rather than file lines in normal mode
 nnoremap <down> gj
@@ -402,7 +404,7 @@ nnoremap <leader>tb :TagbarToggle<cr>
 if executable('rls')
 	au User lsp_setup call lsp#register_server({
 		\ 'name': 'rls',
-		\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+		\ 'cmd': {server_info->['rls']},
 		\ 'whitelist': ['rust'],
 		\ })
 endif
