@@ -1,0 +1,78 @@
+{
+	"layer": "top",
+		"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+		"modules-center": [],
+		"modules-right": ["custom/ice", "network#ssid", "pulseaudio", "cpu", "memory", "temperature", "battery", "clock", "tray"],
+		"sway/window": {
+			"max-length": 50
+		},
+		"sway/workspaces": {
+			"format": "{name}",
+			"numeric-first": false
+		},
+		"network#up": {
+			"format": "🠝 {bandwidthUpBits}"
+		},
+		"network#down": {
+			"format": "🠟 {bandwidthDownBits}"
+		},
+		"network#ssid": {
+			"format-wifi": " {essid}",
+			"format-ethernet": " {ipaddr}",
+			"format-disconnected": "", //An empty format will hide the module.
+			"tooltip-format": "{ifname}  {ipaddr}\n🠝 {bandwidthUpBits}\n🠟 {bandwidthDownBits}",
+			"tooltip-format-wifi": "{essid} ({signalStrength}%)\n {ipaddr}\n🠝 {bandwidthUpBits}\n🠟 {bandwidthDownBits}",
+			"max-length": 50
+		},
+		"cpu": {
+			"interval": 1,
+			"format": " {load}",
+			"max-length": 10
+		},
+		"memory": {
+			"interval": 30,
+			"format": " {}%",
+			"max-length": 10
+		},
+		"temperature": {
+			"thermal-zone": 2,
+			"critical-threshold": 70,
+			"format-critical": " {temperatureC}°C",
+			"format": " {temperatureC}°C"
+		},
+		"battery": {
+			"format": "{icon} {capacity}%",
+			"format-icons": ["", "", "", "", ""]
+		},
+		"clock": {
+			"format-alt": "{:%a, %d. %b  %H:%M}",
+			"tooltip-format": "<big>{:%a, %d. %b}</big>\n<tt><small>{calendar}</small></tt>"
+		},
+		"tray": {
+			"icon-size": 21,
+			"spacing": 10
+		},
+		"custom/ice": {
+			"exec-if": "$HOME/.config/polybar/test-ice",
+			"exec": "$HOME/.config/polybar/ice",
+			"interval": 30,
+			"format": " {}"
+		},
+		"pulseaudio": {
+			"format": "{icon} {volume}%",
+			"format-bluetooth": "{icon} {volume}% ",
+			"format-muted": " muted",
+			"format-icons": {
+				"headphone": "",
+				"hands-free": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": ["", ""]
+			},
+			"scroll-step": 1,
+			"on-click": "pavucontrol"
+		}
+}
+
