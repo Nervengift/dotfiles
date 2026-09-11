@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+get_rotation() {
+	swaymsg -t get_outputs|jq -r 'map(select(.name == "eDP-1"))[0].transform'
+}
+
+if [[ "$(get_rotation)" == "normal" ]]; then
+	swaymsg output eDP-1 transform  270
+else
+	swaymsg output eDP-1 transform 0
+fi

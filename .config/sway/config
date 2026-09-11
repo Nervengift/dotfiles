@@ -1,0 +1,309 @@
+set $mod Mod4
+
+set $terminal alacritty
+
+input * xkb_layout "de"
+input * xkb_variant "neo_qwertz"
+input * xkb_options compose:menu
+input "65261:0:Falbatech_The_Redox_Keyboard" xkb_layout "de"
+input "65261:0:Falbatech_The_Redox_Keyboard" xkb_variant "nodeadkeys"
+input "19780:21060:*" xkb_layout "de"
+input "19780:21060:*" xkb_variant "nodeadkeys"
+input "2:14:ETPS/2_Elantech_Touchpad" {
+	tap enabled
+		natural_scroll enabled
+}
+input "1386:20816:Wacom_Pen_and_multitouch_sensor_Finger" map_to_output "eDP-1"
+input "1386:20816:Wacom_Pen_and_multitouch_sensor_Pen" map_to_output "eDP-1"
+
+output "*" bg /home/clemens/.wallpaper/635630740916675489-red-panda.JPG fill
+
+# moving to the currently focussed workspace moves back to the last focused one
+workspace_auto_back_and_forth yes
+#workspace_layout tabbed
+
+default_border pixel 4
+hide_edge_borders smart
+gaps inner 10
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# font for window titles. ISO 10646 = Unicode
+# font -misc-fixed-medium-r-normal--11-120-75-75-C-70-iso10646-1
+font pango: Hermit 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id $terminal
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+#exec --no-startup-id ulauncher --hide-window
+#bindsym $mod+d exec ulauncher-toggle
+#for_window [app_id="ulauncher"] border none
+bindsym $mod+d exec anyrun
+
+# change focus
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# alternatives for neo (home row arrow keys use mod3)
+bindsym $mod+Mod3+Left focus left
+bindsym $mod+Mod3+Down focus down
+bindsym $mod+Mod3+Up focus up
+bindsym $mod+Mod3+Right focus right
+
+# move focused window
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
+bindsym $mod+Shift+H move left
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# alternatives for neo (home row arrow keys use mod3)
+bindsym $mod+Shift+Mod3+Left move left
+bindsym $mod+Shift+Mod3+Down move down
+bindsym $mod+Shift+Mod3+Up move up
+bindsym $mod+Shift+Mod3+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Control+L split h
+
+# split in vertical orientation
+bindsym $mod+Control+J split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+F floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+g focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindcode $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+dead_circumflex workspace "14:"
+bindsym $mod+F4 workspace "14:"
+bindsym $mod+F3 workspace "13:"
+bindsym $mod+F2 workspace "12:"
+bindsym $mod+F1 workspace "11:"
+bindsym $mod+space scratchpad show
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move workspace number 1
+bindsym $mod+Shift+2 move workspace number 2
+bindsym $mod+Shift+3 move workspace number 3
+bindsym $mod+Shift+4 move workspace number 4
+bindsym $mod+Shift+5 move workspace number 5
+bindsym $mod+Shift+6 move workspace number 6
+bindsym $mod+Shift+7 move workspace number 7
+bindsym $mod+Shift+8 move workspace number 8
+bindsym $mod+Shift+9 move workspace number 9
+bindsym $mod+Shift+0 move workspace number 10
+bindsym $mod+Shift+dead_circumflex move workspace "14:"
+bindsym $mod+Shift+F4 move workspace "14:"
+bindsym $mod+Shift+F3 move workspace "13:"
+bindsym $mod+Shift+F2 move workspace "12:"
+bindsym $mod+Shift+F1 move workspace "11:"
+bindsym $mod+Shift+space move scratchpad
+
+# workspace -> display mappings
+#workspace "11:" output VGA1
+workspace "12:" output VGA1
+workspace "14:" output HDMI1
+workspace "14:" output DP1
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Switch user' 'lxdm -c USER_SWITCH' -b 'Exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+# These bindings trigger as soon as you enter the resize mode
+
+# They resize the border in the direction you pressed, e.g.
+# when pressing left, the window is resized so that it has
+# more space on its left
+
+	bindsym h resize shrink left 10 px or 10 ppt
+		bindsym Shift+H resize grow   left 10 px or 10 ppt
+
+		bindsym j resize shrink down 10 px or 10 ppt
+		bindsym Shift+J resize grow   down 10 px or 10 ppt
+
+		bindsym k resize shrink up 10 px or 10 ppt
+		bindsym Shift+K resize grow   up 10 px or 10 ppt
+
+		bindsym l resize shrink right 10 px or 10 ppt
+		bindsym Shift+L resize grow   right 10 px or 10 ppt
+
+# same bindings, but for the arrow keys
+		bindsym Left resize shrink left 10 px or 10 ppt
+		bindsym Mod3+Left resize shrink left 10 px or 10 ppt
+		bindsym Shift+Left resize grow   left 10 px or 10 ppt
+		bindsym Shift+Mod3+Left resize grow   left 10 px or 10 ppt
+
+		bindsym Down resize shrink down 10 px or 10 ppt
+		bindsym Mod3+Down resize shrink down 10 px or 10 ppt
+		bindsym Shift+Down resize grow   down 10 px or 10 ppt
+		bindsym Shift+Mod3+Down resize grow   down 10 px or 10 ppt
+
+		bindsym Up resize shrink up 10 px or 10 ppt
+		bindsym Mod3+Up resize shrink up 10 px or 10 ppt
+		bindsym Shift+Up resize grow   up 10 px or 10 ppt
+		bindsym Shift+Mod3+Up resize grow   up 10 px or 10 ppt
+
+		bindsym Right resize shrink right 10 px or 10 ppt
+		bindsym Mod3+Right resize shrink right 10 px or 10 ppt
+		bindsym Shift+Right resize grow   right 10 px or 10 ppt
+		bindsym Shift+Mod3+Right resize grow   right 10 px or 10 ppt
+
+# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+mode "move/split" {
+	bindsym Left move left
+		bindsym Down move down
+		bindsym Up move up
+		bindsym Right move right
+		bindsym Mod3+Left move left
+		bindsym Mod3+Down move down
+		bindsym Mod3+Up move up
+		bindsym Mod3+Right move right
+
+		bindsym h split h
+		bindsym v split v
+		bindsym s layout stacking
+		bindsym w layout tabbed
+		bindsym e layout default
+		bindsym a focus parent
+
+		bindsym q kill
+
+		bindsym r mode "resize"
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+# media keys
+#bind 122 exec ponymix decrease 5
+#bind 123 exec ponymix increase 5
+#bind 121 exec ponymix toggle
+
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+bindsym XF86Launch1 exec bash -c "echo rimshot-normal > /dev/udp/192.168.23.42/23421"
+
+bindsym --release Control+Mod1+l exec swaylock -c 000000 -d
+
+bindsym XF86Favorites exec bash /home/clemens/.config/sway/rotate_toggle
+
+bindsym $mod+Shift+N exec i3-input -F "rename workspace to $(/home/clemens/.config/i3/i3_ws_num):$(/home/clemens/.config/i3/i3_ws_num).%s" -P "Rename workspace: $(/home/clemens/.config/i3/i3_ws_num)."
+#bindsym $mod+Shift+N exec i3-input -F "rename workspace to %s" -P "Rename workspace: "
+bindsym $mod+Tab exec rofi -show window
+#cycle through windows on hsplit/tabbed
+#bindsym $mod+Tab focus right
+bindsym Mod1+Tab exec bash /home/clemens/.config/i3/i3_next_window
+bindsym $mod+F7 exec /home/clemens/bin/screenlayout_menu
+bindsym $mod+F8 exec networkmanager_dmenu
+bindsym $mod+F9 exec /home/clemens/bin/rofi-pulse-sink
+bindsym $mod+c exec /home/clemens/bin/cats
+bindsym $mod+Escape exec rofi -show blezz -modi blezz -auto-select -matching normal -blezz-config ~/.config/rofi/rofi-blezz.config -lines 4 -columns 2
+bindsym XF86HomePage workspace "14:"
+
+# smart: focus if on the same ws, set urgent if on other
+focus_on_window_activation smart
+
+for_window [class="Gnome-pie"] floating enable
+for_window [class="HexaCommander"] floating enable
+for_window [class="sun-applet-PluginMain"] floating enable #secsigner
+for_window [class="YADWIN"] floating enable
+for_window [class="Nautilus" instance="file_progress"] floating enable
+for_window [class="Gnome-pie"] border none
+for_window [title="roxterm-float"] floating enable
+for_window [class="Thunderbird" instance="Msgcompose"] floating enable, resize set 1000 700, move position center
+assign [class="Pidgin" window_role="conversation"] "12:"
+for_window [class="Display" floating], resize set 500 500, move position center
+
+# scratchpad terminal
+for_window [app_id="scratch"] move scratchpad
+exec $terminal --class scratch
+
+# Import the most important environment variables into the D-Bus and systemd
+# user environments (e.g. required for screen sharing and Pinentry prompts):
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# Autostart
+exec_always /home/clemens/bin/random-bg-sway.sh
+exec fcitx&
+exec nm-applet&
+
+# lock on suspend
+exec swayidle -w \
+		 before-sleep 'swaylock -f -c 000000'
+
+# notifications
+		 exec mako
+
+# autorandr
+		 exec kanshi
+
+		 exec libinput-gestures&
+#TODO exec /home/clemens/bin/thinkpad-rotate.py&
+
+		exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
+		 exec_always /home/clemens/.config/sway/start-waybar
+#bar {
+#	swaybar_command waybar
+#}
