@@ -16,7 +16,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 input "1386:20816:Wacom_Pen_and_multitouch_sensor_Finger" map_to_output "eDP-1"
 input "1386:20816:Wacom_Pen_and_multitouch_sensor_Pen" map_to_output "eDP-1"
 
-output "*" bg /home/clemens/.wallpaper/635630740916675489-red-panda.JPG fill
+output "*" bg /home/clemens/.wallpaper/635630740916675489-red-panda.JPG fill #000000
 
 # moving to the currently focussed workspace moves back to the last focused one
 workspace_auto_back_and_forth yes
