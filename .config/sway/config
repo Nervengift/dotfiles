@@ -11,7 +11,7 @@ input "19780:21060:*" xkb_layout "de"
 input "19780:21060:*" xkb_variant "nodeadkeys"
 input "2:14:ETPS/2_Elantech_Touchpad" {
 	tap enabled
-		natural_scroll enabled
+	natural_scroll enabled
 }
 input "1386:20816:Wacom_Pen_and_multitouch_sensor_Finger" map_to_output "eDP-1"
 input "1386:20816:Wacom_Pen_and_multitouch_sensor_Pen" map_to_output "eDP-1"
@@ -20,7 +20,6 @@ output "*" bg /home/clemens/.wallpaper/635630740916675489-red-panda.JPG fill
 
 # moving to the currently focussed workspace moves back to the last focused one
 workspace_auto_back_and_forth yes
-#workspace_layout tabbed
 
 default_border pixel 4
 hide_edge_borders smart
@@ -34,7 +33,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # font for window titles. ISO 10646 = Unicode
-# font -misc-fixed-medium-r-normal--11-120-75-75-C-70-iso10646-1
 font pango: Hermit 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -46,9 +44,7 @@ bindsym $mod+Return exec --no-startup-id $terminal
 # kill focused window
 bindsym $mod+Shift+Q kill
 
-#exec --no-startup-id ulauncher --hide-window
-#bindsym $mod+d exec ulauncher-toggle
-#for_window [app_id="ulauncher"] border none
+# anyrun as launcher
 bindsym $mod+d exec anyrun
 
 # change focus
@@ -164,116 +160,94 @@ bindsym $mod+Shift+E exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Switch user' '
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-# They resize the border in the direction you pressed, e.g.
-# when pressing left, the window is resized so that it has
-# more space on its left
-
+	# They resize the border in the direction you pressed, e.g.
+	# when pressing left, the window is resized so that it has
+	# more space on its left
 	bindsym h resize shrink left 10 px or 10 ppt
-		bindsym Shift+H resize grow   left 10 px or 10 ppt
+	bindsym Shift+H resize grow   left 10 px or 10 ppt
 
-		bindsym j resize shrink down 10 px or 10 ppt
-		bindsym Shift+J resize grow   down 10 px or 10 ppt
+	bindsym j resize shrink down 10 px or 10 ppt
+	bindsym Shift+J resize grow   down 10 px or 10 ppt
 
-		bindsym k resize shrink up 10 px or 10 ppt
-		bindsym Shift+K resize grow   up 10 px or 10 ppt
+	bindsym k resize shrink up 10 px or 10 ppt
+	bindsym Shift+K resize grow   up 10 px or 10 ppt
 
-		bindsym l resize shrink right 10 px or 10 ppt
-		bindsym Shift+L resize grow   right 10 px or 10 ppt
+	bindsym l resize shrink right 10 px or 10 ppt
+	bindsym Shift+L resize grow   right 10 px or 10 ppt
 
-# same bindings, but for the arrow keys
-		bindsym Left resize shrink left 10 px or 10 ppt
-		bindsym Mod3+Left resize shrink left 10 px or 10 ppt
-		bindsym Shift+Left resize grow   left 10 px or 10 ppt
-		bindsym Shift+Mod3+Left resize grow   left 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink left 10 px or 10 ppt
+	bindsym Mod3+Left resize shrink left 10 px or 10 ppt
+	bindsym Shift+Left resize grow   left 10 px or 10 ppt
+	bindsym Shift+Mod3+Left resize grow   left 10 px or 10 ppt
 
-		bindsym Down resize shrink down 10 px or 10 ppt
-		bindsym Mod3+Down resize shrink down 10 px or 10 ppt
-		bindsym Shift+Down resize grow   down 10 px or 10 ppt
-		bindsym Shift+Mod3+Down resize grow   down 10 px or 10 ppt
+	bindsym Down resize shrink down 10 px or 10 ppt
+	bindsym Mod3+Down resize shrink down 10 px or 10 ppt
+	bindsym Shift+Down resize grow   down 10 px or 10 ppt
+	bindsym Shift+Mod3+Down resize grow   down 10 px or 10 ppt
 
-		bindsym Up resize shrink up 10 px or 10 ppt
-		bindsym Mod3+Up resize shrink up 10 px or 10 ppt
-		bindsym Shift+Up resize grow   up 10 px or 10 ppt
-		bindsym Shift+Mod3+Up resize grow   up 10 px or 10 ppt
+	bindsym Up resize shrink up 10 px or 10 ppt
+	bindsym Mod3+Up resize shrink up 10 px or 10 ppt
+	bindsym Shift+Up resize grow   up 10 px or 10 ppt
+	bindsym Shift+Mod3+Up resize grow   up 10 px or 10 ppt
 
-		bindsym Right resize shrink right 10 px or 10 ppt
-		bindsym Mod3+Right resize shrink right 10 px or 10 ppt
-		bindsym Shift+Right resize grow   right 10 px or 10 ppt
-		bindsym Shift+Mod3+Right resize grow   right 10 px or 10 ppt
+	bindsym Right resize shrink right 10 px or 10 ppt
+	bindsym Mod3+Right resize shrink right 10 px or 10 ppt
+	bindsym Shift+Right resize grow   right 10 px or 10 ppt
+	bindsym Shift+Mod3+Right resize grow   right 10 px or 10 ppt
 
-# back to normal: Enter or Escape
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 mode "move/split" {
 	bindsym Left move left
-		bindsym Down move down
-		bindsym Up move up
-		bindsym Right move right
-		bindsym Mod3+Left move left
-		bindsym Mod3+Down move down
-		bindsym Mod3+Up move up
-		bindsym Mod3+Right move right
+	bindsym Down move down
+	bindsym Up move up
+	bindsym Right move right
+	bindsym Mod3+Left move left
+	bindsym Mod3+Down move down
+	bindsym Mod3+Up move up
+	bindsym Mod3+Right move right
 
-		bindsym h split h
-		bindsym v split v
-		bindsym s layout stacking
-		bindsym w layout tabbed
-		bindsym e layout default
-		bindsym a focus parent
+	bindsym h split h
+	bindsym v split v
+	bindsym s layout stacking
+	bindsym w layout tabbed
+	bindsym e layout default
+	bindsym a focus parent
 
-		bindsym q kill
+	bindsym q kill
 
-		bindsym r mode "resize"
+	bindsym r mode "resize"
 
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
-
-# media keys
-#bind 122 exec ponymix decrease 5
-#bind 123 exec ponymix increase 5
-#bind 121 exec ponymix toggle
 
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-
-bindsym XF86Launch1 exec bash -c "echo rimshot-normal > /dev/udp/192.168.23.42/23421"
 
 bindsym --release Control+Mod1+l exec swaylock -c 000000 -d
 
 bindsym XF86Favorites exec bash /home/clemens/.config/sway/rotate_toggle
 
-bindsym $mod+Shift+N exec i3-input -F "rename workspace to $(/home/clemens/.config/i3/i3_ws_num):$(/home/clemens/.config/i3/i3_ws_num).%s" -P "Rename workspace: $(/home/clemens/.config/i3/i3_ws_num)."
-#bindsym $mod+Shift+N exec i3-input -F "rename workspace to %s" -P "Rename workspace: "
-bindsym $mod+Tab exec rofi -show window
-#cycle through windows on hsplit/tabbed
-#bindsym $mod+Tab focus right
-bindsym Mod1+Tab exec bash /home/clemens/.config/i3/i3_next_window
-bindsym $mod+F7 exec /home/clemens/bin/screenlayout_menu
-bindsym $mod+F8 exec networkmanager_dmenu
-bindsym $mod+F9 exec /home/clemens/bin/rofi-pulse-sink
-bindsym $mod+c exec /home/clemens/bin/cats
+# TODO
+#bindsym $mod+Shift+N exec i3-input -F "rename workspace to $(/home/clemens/.config/i3/i3_ws_num):$(/home/clemens/.config/i3/i3_ws_num).%s" -P "Rename workspace: $(/home/clemens/.config/i3/i3_ws_num)."
+# TODO
+#bindsym Mod1+Tab exec bash /home/clemens/.config/i3/i3_next_window
 bindsym $mod+Escape exec rofi -show blezz -modi blezz -auto-select -matching normal -blezz-config ~/.config/rofi/rofi-blezz.config -lines 4 -columns 2
 bindsym XF86HomePage workspace "14:"
 
 # smart: focus if on the same ws, set urgent if on other
 focus_on_window_activation smart
 
-for_window [class="Gnome-pie"] floating enable
-for_window [class="HexaCommander"] floating enable
-for_window [class="sun-applet-PluginMain"] floating enable #secsigner
-for_window [class="YADWIN"] floating enable
 for_window [class="Nautilus" instance="file_progress"] floating enable
-for_window [class="Gnome-pie"] border none
-for_window [title="roxterm-float"] floating enable
-for_window [class="Thunderbird" instance="Msgcompose"] floating enable, resize set 1000 700, move position center
-assign [class="Pidgin" window_role="conversation"] "12:"
 for_window [class="Display" floating], resize set 500 500, move position center
 
 # scratchpad terminal
@@ -286,24 +260,23 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 
 # Autostart
 exec_always /home/clemens/bin/random-bg-sway.sh
+# TODO
 exec fcitx&
-exec nm-applet&
 
 # lock on suspend
-exec swayidle -w \
-		 before-sleep 'swaylock -f -c 000000'
+exec swayidle -w before-sleep 'swaylock -f -c 000000'
 
 # notifications
-		 exec mako
+exec mako
 
 # autorandr
-		 exec kanshi
+exec kanshi
 
-		 exec libinput-gestures&
-#TODO exec /home/clemens/bin/thinkpad-rotate.py&
+exec libinput-gestures&
 
-		exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
-		 exec_always /home/clemens/.config/sway/start-waybar
+exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
+exec_always /home/clemens/.config/sway/start-waybar
+
 #bar {
 #	swaybar_command waybar
 #}
